@@ -9,16 +9,18 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 //@Test (dependsOnGroups = "sanity")
 public class EmulatorTest extends BaseClass {
 
     @Test
-    public void androidEmulator() throws MalformedURLException {
+    public void androidEmulator() throws IOException, InterruptedException {
         //GIVEN
+        service = startServer();
+//        capabilities.StartEmulator();
 
-        //Start emulator
         //follow workflow steps
         System.out.println("Starting test from Test NG");
         AndroidDriver<AndroidElement> driver = capabilities("ApiDemos-debug.apk");
@@ -37,6 +39,8 @@ public class EmulatorTest extends BaseClass {
         //get connection status
         Assert.assertEquals(actual, "secret");
         driver.findElementsByClassName("android.widget.Button").get(1).click();
+
+        service.stop();
     }
 
 }
