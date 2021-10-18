@@ -41,7 +41,7 @@ public class Capabilities {
     }
 
     public static void StartEmulator() throws IOException, InterruptedException {
-        Runtime.getRuntime().exec(System.getProperty("user.dir") + "\\src\\main\\java\\resources\\startEmulator.bat");
+        Runtime.getRuntime().exec(System.getProperty("user.dir") + "//src//main//java//resources//startEmulator.sh");
         Thread.sleep(6000);
     }
 
@@ -52,7 +52,7 @@ public class Capabilities {
         DesiredCapabilities cap = new DesiredCapabilities();
         StartEmulator();
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "TestEmulator");
+        cap.setCapability(MobileCapabilityType.DEVICE_NAME, "AndroidEmulator");
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
         cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 14);
