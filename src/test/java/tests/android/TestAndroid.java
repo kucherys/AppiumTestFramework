@@ -7,9 +7,9 @@ import pages.LaunchPage;
 
 import java.io.IOException;
 
-public class TetsAndroid extends BaseClass {
+public class TestAndroid extends BaseClass {
 
-    @Test
+    @Test (enabled = false)
     public void androidEmulator() throws IOException, InterruptedException {
         driver.findElementByXPath("//android.widget.TextView[@text='Preference']").click();
         driver.findElementByXPath("//android.widget.TextView[@text='3. Preference dependencies']").click();
