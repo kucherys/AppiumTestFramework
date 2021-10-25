@@ -19,8 +19,7 @@ public class BaseClass extends Capabilities {
     public void setupClassGlobal() throws IOException, InterruptedException {
         System.out.println("Global class setup");
         service = startServer();
-//        driver = capabilities("ApiDemos-debug.apk");
-        driver = capabilities("alrajhibank-0.0.15-debug.apk");
+        driver = capabilities("digibank-0.0.4-debug.apk");
     }
 
     @AfterClass
