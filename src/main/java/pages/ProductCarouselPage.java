@@ -9,11 +9,13 @@ public class ProductCarouselPage {
     AndroidDriver<AndroidElement> driver;
 
     EligibilityPage eligibilityPage;
+    LaunchPage launchPage;
 
     By openBankAccountButton = By.id("button.openBankAccount");
     By eligibleButton = By.id("button.eligibilityCriteria");
     By logoLabel = By.id("label.logo");
     By instructionText = By.id("label.carousel.0");
+    String buttonBack = "Back";
 
     public ProductCarouselPage(AndroidDriver<AndroidElement> driver){
         this.driver = driver;
@@ -44,6 +46,10 @@ public class ProductCarouselPage {
         eligibilityPage = new EligibilityPage(driver);
         return eligibilityPage;
     }
-
+    public LaunchPage backToPreviousPage (){
+        driver.findElementByClassName(buttonBack).click();
+        launchPage = new LaunchPage(driver);
+        return launchPage;
+    }
 
 }
